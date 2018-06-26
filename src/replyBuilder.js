@@ -46,6 +46,15 @@ class ReplyBuilder {
     this.reply.response.end_session = flag
   }
 
+  card(items, header) {
+    this.reply.response.card = {
+      type: 'ItemsList',
+      ...header && { header: { text: header } }, 
+      items
+    }
+    return this
+  }
+
   get() {
     return this.reply
   }
