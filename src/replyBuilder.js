@@ -50,7 +50,7 @@ class ReplyBuilder {
   card(items, header) {
     this.reply.response.card = {
       type: 'ItemsList',
-      ...header && { header: { text: header } }, 
+      ...header && { header: { text: header } },
       items
     }
     return this
