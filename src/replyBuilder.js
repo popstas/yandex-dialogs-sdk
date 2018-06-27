@@ -47,6 +47,15 @@ class ReplyBuilder {
     return this
   }
 
+  card(items, header) {
+    this.reply.response.card = {
+      type: 'ItemsList',
+      ...header && { header: { text: header } }, 
+      items
+    }
+    return this
+  }
+
   get() {
     return this.reply
   }
